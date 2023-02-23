@@ -14,6 +14,7 @@
 
     <!-- Title Page-->
     <title>
+        {{-- default value is Ecommerce website --}}
         @yield('title','Ecommerce website')
     </title>
 
@@ -153,7 +154,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="{{ asset('admin/images/icon/logo.png') }}" alt="CoolAdmin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -206,13 +207,16 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
+                            <div>
+                                {{-- this div is important for styling --}}
+                            </div>
+                            {{-- <form class="form-header" action="" method="POST">
                                 <input class="au-input au-input--xl" type="text" name="search"
                                     placeholder="Search for datas &amp; reports..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
-                            </form>
+                            </form> --}}
                             <div class="header-button">
                                 {{-- <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
@@ -329,7 +333,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="{{ asset('admin/images/icon/avatar-01.jpg') }}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <x-app-layout>

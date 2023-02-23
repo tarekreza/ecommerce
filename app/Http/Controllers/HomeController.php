@@ -43,7 +43,7 @@ class HomeController extends Controller
         if ($usertype=='1')
         {
             $totalProduct=Product::all()->count();
-            $totalUser=user::all()->count();
+            $totalUser=user::all()->where('usertype','0')->count();
             $totalOrder=order::all()->count();
 
             $order=order::all();

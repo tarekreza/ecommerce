@@ -19,17 +19,14 @@ class CategoryController extends Controller
     public function categoryProcess(Request $request)
     {
         
-        // $request->validate([
-        //     'Category_name'=>'required',
-        //     'Category_slug'=>'required|unique:category'
-
-        // ]);
+        $request->validate([
+            'Category_name'=>'required|unique:categories',
+            'Category_slug'=>'required|unique:categories'
+        ]);
 
         $Category=new Category();
         $Category->Category_name=$request->Category_name;
         $Category->Category_slug=$request->Category_slug;
-      
-
         $Category->save();
         return redirect('admin/category')->with('message', 'Category Added Successfully');
 
