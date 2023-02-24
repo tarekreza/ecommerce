@@ -38,7 +38,7 @@ class CategoryController extends Controller
     {
         $data=category::find($id);
         $data->delete();
-        return redirect()->back()->with('message', 'User Deleted');
+        return redirect()->back()->with('message', 'Category deleted successfully');
     }
     public function updateCategoryForm($id)
     {
@@ -48,16 +48,19 @@ class CategoryController extends Controller
 
     public function categoryUpdate(Request $request,$id)
     {
-        $Category=Category::find($request->id);
+        $Category=Category::find($id);
         
-        
+        $request->validate([
+            'Category_name'=>'required|unique:categories',
+            'Category_slug'=>'required|unique:categories'
+        ]);
        
         $Category->Category_name=$request->Category_name;
         $Category->Category_slug=$request->Category_slug;
         
 
         $Category->save();
-        return redirect('admin/category')->with('message', 'Category Updated Successfully');
+        return redirect('admin/category')->with('message', 'Category updated successfully');
     }
 
 

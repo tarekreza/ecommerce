@@ -29,8 +29,8 @@
                             <th scope="col">ID</th>
                             <th scope="col">Category Name</th>
                             <th scope="col">Category Slug</th>
-                            <th scope="col">Operation</th>
-                            <th scope="col">Update</th>
+                            <th class="text-center" colspan="2" scope="col" >Operation</th>
+                            {{-- <th scope="col">Update</th> --}}
                         </tr>
                     </thead>
                     @foreach ($data as $category)
@@ -45,13 +45,13 @@
                                         @method('Delete')
                                         <a href="{{ route('deletecategory', ['id' => $category->id]) }}"
                                             class="btn btn-outline-danger btn-sm"
-                                            onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+                                            onclick="return confirm('Are you sure? you want to delete this category')">Delete</a>
                                     </form>
                                 </td>
                                 <td>
                                     <a href="{{ route('updateCategoryForm', ['id' => $category->id]) }}"
                                         class="btn btn-outline-secondary btn-sm"
-                                        onclick="return confirm('Are you sure you want to Change this')">UPDATE</a>
+                                        onclick="return confirm('Are you sure? you want to update this category')">Update</a>
                                 </td>
                             </tr>
                         </tbody>
