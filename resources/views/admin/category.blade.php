@@ -23,40 +23,36 @@
                 <br>
                 <br>
                 {{-- table --}}
-                <table class="table table-borderless table-striped table-earning">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Category Name</th>
-                            <th scope="col">Category Slug</th>
-                            <th class="text-center" colspan="2" scope="col" >Operation</th>
-                            {{-- <th scope="col">Update</th> --}}
-                        </tr>
-                    </thead>
-                    @foreach ($data as $category)
-                        <tbody>
+                <div class="col-md-12">
+                    <table class="table table-borderless table-striped table-earning">
+                        <thead>
                             <tr>
-                                <td>{{ $category->id }}</td>
-                                <td>{{ $category->Category_name }}</td>
-                                <td>{{ $category->Category_slug }}</td>
-                                <td>
-                                    <form action="" method="post">
-                                        @csrf
-                                        @method('Delete')
-                                        <a href="{{ route('deletecategory', ['id' => $category->id]) }}"
-                                            class="btn btn-outline-danger btn-sm"
-                                            onclick="return confirm('Are you sure? you want to delete this category')">Delete</a>
-                                    </form>
-                                </td>
-                                <td>
-                                    <a href="{{ route('updateCategoryForm', ['id' => $category->id]) }}"
-                                        class="btn btn-outline-secondary btn-sm"
-                                        onclick="return confirm('Are you sure? you want to update this category')">Update</a>
-                                </td>
+                                <th scope="col">ID</th>
+                                <th scope="col">Category Name</th>
+                                <th scope="col">Category Slug</th>
+                                <th scope="col">Operation</th>
+                                {{-- <th scope="col">Update</th> --}}
                             </tr>
-                        </tbody>
-                    @endforeach
-                </table>
+                        </thead>
+                        @foreach ($data as $category)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->Category_name }}</td>
+                                    <td>{{ $category->Category_slug }}</td>
+                                    <td>
+                                        <a href="{{ route('deletecategory', ['id' => $category->id]) }}"
+                                            class="btn btn-outline-danger btn-sm mr-2"
+                                            onclick="return confirm('Are you sure you want to delete this category?')">Delete</a>
+                                        <a href="{{ route('updateCategoryForm', ['id' => $category->id]) }}"
+                                            class="btn btn-outline-secondary btn-sm"
+                                            onclick="return confirm('Are you sure you want to update this category?')">Update</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach
+                    </table>
+                </div>
                 {{-- table --}}
             </div>
         </div>

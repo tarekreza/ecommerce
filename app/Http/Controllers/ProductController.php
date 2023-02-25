@@ -56,7 +56,7 @@ class ProductController extends Controller
     {
         $data=product::find($id);
         $data->delete();
-        return redirect()->back()->with('message', 'Product Deleted');
+        return redirect()->back()->with('message', 'Product Deleted Successfully');
     }
     public function updateProductForm($id)
     {

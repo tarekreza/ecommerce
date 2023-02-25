@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="Product_name">Product Name</label>
                             <input type="text" name="Product_name" class="form-control" id="Product_name"
-                                aria-describedby="emailHelp" placeholder="Product_name" required>
+                                aria-describedby="emailHelp" placeholder="Product name" required>
                             <small id="emailHelp" class="form-text text-muted">Please Provide A New Product.</small>
                         </div>
                         {{-- <span>
