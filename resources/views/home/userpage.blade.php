@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="" />
     <link rel="shortcut icon" href="images/favicon.png" type="">
-    <title>www.Ecommerce.com</title>
+    <title>Vendex | Everything You Need</title>
     <!-- bootstrap core css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('home/css/bootstrap.css') }}" />
     <!-- font awesome style -->

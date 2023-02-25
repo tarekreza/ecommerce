@@ -40,7 +40,7 @@
                      {{$products->Title}}
                   </h5>
                   <h6>
-                    {{$products->price}} <span>&#2547;</span> 
+                    {{$products->price}} <span>$</span> 
                   </h6>
                </div>
             </div>

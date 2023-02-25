@@ -15,7 +15,7 @@
     <!-- Title Page-->
     <title>
         {{-- default value is Ecommerce website --}}
-        @yield('title','Ecommerce website')
+        @yield('title','Vendex | Ecommerce website')
     </title>
 
     <!-- Fontfaces CSS-->
@@ -52,7 +52,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="{{ route('home') }}">
                             <img src="{{ asset('admin/images/icon/logo.png') }}" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -153,7 +153,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('admin/images/icon/logo.png') }}" alt="CoolAdmin" />
                 </a>
             </div>
@@ -341,7 +341,7 @@
                                             </x-app-layout>
 
                                         </div>
-                                        <div class="account-dropdown js-dropdown">
+                                        {{-- <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
@@ -366,7 +366,7 @@
                                                         <i class="zmdi zmdi-power"></i>Logout</a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
